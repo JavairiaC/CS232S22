@@ -1,0 +1,33 @@
+Midpoint_A fails when you underflow (or overflow dependign on whether what you have as x and y) it when the (y-x) operation takes place. If you have the INT_MIN or -2147483648 in the y slot and a non zero number in the y slot you get an undeflow operation.
+
+Integers use 32 bits, so these numbers are a lot bigger than chars that only use 8 bits.
+INT_MIN in binary = 0b10000000000000000000000000000000
+212 in binary = 0b00000000000000000000000011010100
+-212 in binary = 0b11111111111111111111111100101100
+
+when you add INT_MIN and -212 you get 
+
+0b01111111111111111111111100101100
+
+instead of 
+
+0b101111111111111111111111100101100
+
+because the left most bit gets deleted because of the 32 bit storage.
+
+This is a positive number, when it should be a negative number. 
+
+Becuase of the underflow your midpoint becomes 1073741930 instead of -1073741718.
+
+Midpoint_original fails when you overflow it. if you have INT_MAX or 2147483647 and INT_MAX-2 or 2147483645
+
+INT_MAX in binary = 0b01111111111111111111111111111111
+INT_MAX-2 in binary = 0b01111111111111111111111111111110
+
+when you add INT_MAX and INT_MAX-2 you get
+
+0b1111111111111111111111111111101
+
+Because binary numbers become negative when the leading bit is 1, it becomes a negative number instead of a positive number.
+
+This makes the midpoint -2 instead of 214783646
