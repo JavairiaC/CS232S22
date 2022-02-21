@@ -1,0 +1,1 @@
+In order to make the midpoint fail you need to input two negative numbers, or two numbers whos midpoint would be negative.

@@ -1,0 +1,1 @@
+Midpoint C can never fail because the chance that it would either over or underflow is eliminated due to it computing through the bits.

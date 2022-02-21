@@ -6,7 +6,18 @@
 void set_bits(unsigned * x,
              unsigned start,
              unsigned end,
-             unsigned *v) {
+             unsigned *y) {
+
+
+    int len = end - start + 1;
+    for(int i = 0; i < len; ++i){
+      if(y[i] == 1){
+        *x = *x | (1 << (start + i));
+      }
+      else{
+        *x = *x & ( ~ (1 << (start + i)));
+      }
+    }
     // YOUR CODE HERE
     // No return value
     // v points to an array of at least (end-start+1) unsigned integers.
