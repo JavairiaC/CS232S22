@@ -13,9 +13,15 @@ int main()
   int length;
   
   puts("Type some text (then ENTER):");
+
+  fgets(text, MAX, stdin);
+  length = strlen(text)-1;
+  
+
+
   
   /* Save typed characters in text[]: */
-    
+    /*
   for (i = 0; i < MAX; i++)
   {
     text[i] = getchar();
@@ -23,7 +29,7 @@ int main()
       break;
   }
   length = i;
-  
+  */
   /* Analyse contents of text[]: */
     
   for (i = lowercase = uppercase = digits = other = 0; i < MAX; i++)
