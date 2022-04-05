@@ -1,0 +1,2 @@
+The sum variable is going to equal 0.
+This is because the variable does not update until all iterations of the loop are finished because it is recursive.

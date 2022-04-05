@@ -1,0 +1,3 @@
+I think the stack frame size is 523,820 bytes. 
+This is because the recursion stopped at iteration 130,869 and each iteration takes up 4 bytes of space.
+130,955 * 4 = 523,820
